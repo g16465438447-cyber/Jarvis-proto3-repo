@@ -1,0 +1,69 @@
+{
+  "run_id": "b81c4481-c744-4f35-91e3-baf6d62ea54f",
+  "goal": "list .tmp then shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "88b83bbf-4a26-42c0-bb45-0b5414389b29",
+      "type": "fs.list",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "recursive": false
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "List files in target path.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    },
+    {
+      "action_id": "9dcf13ff-9415-405f-be67-94001e24e4a5",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T00:29:56.519Z",
+      "action_id": "88b83bbf-4a26-42c0-bb45-0b5414389b29",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:29:56.519Z",
+      "action_id": "88b83bbf-4a26-42c0-bb45-0b5414389b29",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    },
+    {
+      "ts": "2026-03-04T00:29:56.519Z",
+      "action_id": "9dcf13ff-9415-405f-be67-94001e24e4a5",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:29:56.519Z",
+      "action_id": "9dcf13ff-9415-405f-be67-94001e24e4a5",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

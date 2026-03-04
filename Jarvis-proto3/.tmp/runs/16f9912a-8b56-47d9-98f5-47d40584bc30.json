@@ -1,0 +1,44 @@
+{
+  "run_id": "16f9912a-8b56-47d9-98f5-47d40584bc30",
+  "goal": "shell Get-ChildItem -Path C:\\Users\\User\\Downloads -File",
+  "plan": [
+    {
+      "action_id": "5c5f2439-6045-4137-b07e-0197d7c5e241",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-ChildItem",
+        "args": [
+          "-Path",
+          "C:\\Users\\User\\Downloads",
+          "-File"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T00:51:47.035Z",
+      "action_id": "5c5f2439-6045-4137-b07e-0197d7c5e241",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:51:47.035Z",
+      "action_id": "5c5f2439-6045-4137-b07e-0197d7c5e241",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "run_id": "81a541bd-2ab8-4ac9-bed3-efa77f95a19e",
+  "goal": "failure-mode-test",
+  "plan": [
+    {
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "type": "fs.move",
+      "args": {
+        "source": "D:\\Jarvis-proto3\\.tmp\\a.txt",
+        "destination": "D:\\Jarvis-proto3\\.tmp\\b.txt"
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "list output",
+      "rollback": {
+        "type": "fs.move",
+        "args": {
+          "source": "D:\\Jarvis-proto3\\.tmp\\b.txt",
+          "destination": "D:\\Jarvis-proto3\\.tmp\\a.txt"
+        }
+      },
+      "retries": 0,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "status": "fail",
+      "attempt": 1,
+      "stderr": "terminal failure",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "status": "in_progress",
+      "stdout": "Attempting rollback."
+    },
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "status": "rolled_back"
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [
+    {
+      "ts": "2026-03-03T23:19:42.556Z",
+      "action_id": "a8b4d0cb-fa9b-4ca1-bbcc-ed7eb90272c7",
+      "failure_signature": "terminal failure",
+      "patch": "No alternate patch configured in scaffold runner.",
+      "outcome": "unresolved"
+    }
+  ],
+  "final_result": {
+    "status": "failed",
+    "summary": "Run failed due to action errors."
+  }
+}

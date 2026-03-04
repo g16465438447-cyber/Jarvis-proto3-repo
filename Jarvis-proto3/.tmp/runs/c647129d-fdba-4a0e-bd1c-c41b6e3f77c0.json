@@ -1,0 +1,43 @@
+{
+  "run_id": "c647129d-fdba-4a0e-bd1c-c41b6e3f77c0",
+  "goal": "test plan",
+  "plan": [
+    {
+      "action_id": "0f70c1c1-bc0d-41f6-a525-c20e098b0434",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "high",
+      "requires_approval": true,
+      "expected_output": "date",
+      "rollback": null,
+      "retries": 0,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T01:04:32.017Z",
+      "action_id": "0f70c1c1-bc0d-41f6-a525-c20e098b0434",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T01:04:32.017Z",
+      "action_id": "0f70c1c1-bc0d-41f6-a525-c20e098b0434",
+      "status": "awaiting_approval",
+      "stderr": "Action requires explicit approval and auto-approve is disabled."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "partial",
+    "summary": "Run halted pending approval or skip policy."
+  }
+}

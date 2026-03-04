@@ -1,0 +1,63 @@
+{
+  "run_id": "a6cac0be-6a3c-4ae6-a722-b514394137fc",
+  "goal": "failure-mode-test",
+  "plan": [
+    {
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "type": "fs.list",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "recursive": false
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "list output",
+      "rollback": null,
+      "retries": 1,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T00:34:02.444Z",
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:34:02.444Z",
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T00:34:02.445Z",
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "status": "retrying",
+      "attempt": 1,
+      "stderr": "transient failure",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-04T00:34:02.445Z",
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "status": "in_progress",
+      "attempt": 2
+    },
+    {
+      "ts": "2026-03-04T00:34:02.446Z",
+      "action_id": "0f4daac1-3315-465e-afbe-d8965f9d3b0e",
+      "status": "ok",
+      "attempt": 2,
+      "stdout": "recovered",
+      "stderr": "",
+      "redacted": false
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

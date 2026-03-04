@@ -1,0 +1,17 @@
+{
+  "allowed_paths": [
+    "*"
+  ],
+  "allowed_apps": [
+    "*"
+  ],
+  "allowed_shell_commands": [
+    "*"
+  ],
+  "high_risk_actions": [
+    "fs.delete",
+    "fs.overwrite",
+    "shell.run:Remove-Item",
+    "shell.run:Invoke-WebRequest"
+  ]
+}

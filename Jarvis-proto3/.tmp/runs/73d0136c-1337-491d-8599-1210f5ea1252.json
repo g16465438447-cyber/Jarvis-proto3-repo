@@ -1,0 +1,43 @@
+{
+  "run_id": "73d0136c-1337-491d-8599-1210f5ea1252",
+  "goal": "shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "0c8873dd-73a2-4652-a1fc-46d00c4954cd",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T00:21:51.981Z",
+      "action_id": "0c8873dd-73a2-4652-a1fc-46d00c4954cd",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:21:51.981Z",
+      "action_id": "0c8873dd-73a2-4652-a1fc-46d00c4954cd",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

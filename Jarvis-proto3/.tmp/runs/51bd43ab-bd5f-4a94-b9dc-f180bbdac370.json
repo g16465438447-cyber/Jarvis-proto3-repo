@@ -1,0 +1,87 @@
+{
+  "run_id": "51bd43ab-bd5f-4a94-b9dc-f180bbdac370",
+  "goal": "list .tmp then shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "589403c4-f83d-459f-a126-574cbb19e436",
+      "type": "fs.list",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "recursive": false
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "List files in target path.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    },
+    {
+      "action_id": "f635a43b-baaa-4582-acb8-0aaf3f90f246",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T03:13:22.799Z",
+      "action_id": "589403c4-f83d-459f-a126-574cbb19e436",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:13:22.799Z",
+      "action_id": "589403c4-f83d-459f-a126-574cbb19e436",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T03:13:22.805Z",
+      "action_id": "589403c4-f83d-459f-a126-574cbb19e436",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "D:\\Jarvis-proto3\\.tmp\\link\nD:\\Jarvis-proto3\\.tmp\\README.md\nD:\\Jarvis-proto3\\.tmp\\runs\nD:\\Jarvis-proto3\\.tmp\\watch-smoke",
+      "stderr": "",
+      "redacted": false
+    },
+    {
+      "ts": "2026-03-04T03:13:22.805Z",
+      "action_id": "f635a43b-baaa-4582-acb8-0aaf3f90f246",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:13:22.806Z",
+      "action_id": "f635a43b-baaa-4582-acb8-0aaf3f90f246",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T03:13:29.926Z",
+      "action_id": "f635a43b-baaa-4582-acb8-0aaf3f90f246",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "2026-03-03T19:13:29.4779018-08:00",
+      "stderr": "",
+      "redacted": false
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

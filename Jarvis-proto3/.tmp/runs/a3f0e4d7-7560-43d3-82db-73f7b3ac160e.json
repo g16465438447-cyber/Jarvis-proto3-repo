@@ -1,0 +1,87 @@
+{
+  "run_id": "a3f0e4d7-7560-43d3-82db-73f7b3ac160e",
+  "goal": "browser open https://openai.com/index/chatgpt/ then shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "8c6ec8fb-1ebc-4552-b55c-68a55417629e",
+      "type": "browser.open",
+      "args": {
+        "session_id": "default",
+        "url": "https://openai.com/index/chatgpt/"
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Open browser session at target URL.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    },
+    {
+      "action_id": "bd7eac46-dc93-43a0-82a3-d801e2509f34",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T03:30:19.553Z",
+      "action_id": "8c6ec8fb-1ebc-4552-b55c-68a55417629e",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:30:19.553Z",
+      "action_id": "8c6ec8fb-1ebc-4552-b55c-68a55417629e",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T03:30:24.073Z",
+      "action_id": "8c6ec8fb-1ebc-4552-b55c-68a55417629e",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "Opened https://openai.com/index/chatgpt/",
+      "stderr": "",
+      "redacted": false
+    },
+    {
+      "ts": "2026-03-04T03:30:24.074Z",
+      "action_id": "bd7eac46-dc93-43a0-82a3-d801e2509f34",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:30:24.074Z",
+      "action_id": "bd7eac46-dc93-43a0-82a3-d801e2509f34",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T03:30:30.721Z",
+      "action_id": "bd7eac46-dc93-43a0-82a3-d801e2509f34",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "2026-03-03T19:30:30.4114852-08:00",
+      "stderr": "",
+      "redacted": false
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

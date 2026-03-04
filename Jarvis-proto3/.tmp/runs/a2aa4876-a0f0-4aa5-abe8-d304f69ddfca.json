@@ -1,0 +1,41 @@
+{
+  "run_id": "a2aa4876-a0f0-4aa5-abe8-d304f69ddfca",
+  "goal": "search .tmp smoke.txt",
+  "plan": [
+    {
+      "action_id": "ea317dfd-bdbc-4907-b7b4-2d4a12e5f031",
+      "type": "fs.search",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "pattern": "smoke.txt",
+        "recursive": true
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "Search files by name pattern.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T01:06:40.205Z",
+      "action_id": "ea317dfd-bdbc-4907-b7b4-2d4a12e5f031",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T01:06:40.205Z",
+      "action_id": "ea317dfd-bdbc-4907-b7b4-2d4a12e5f031",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

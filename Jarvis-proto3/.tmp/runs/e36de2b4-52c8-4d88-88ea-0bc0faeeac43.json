@@ -1,0 +1,75 @@
+{
+  "run_id": "e36de2b4-52c8-4d88-88ea-0bc0faeeac43",
+  "goal": "test plan",
+  "plan": [
+    {
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "type": "fs.move",
+      "args": {
+        "source": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\missing.txt",
+        "destination": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\dest.txt"
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "move",
+      "rollback": {
+        "type": "fs.move",
+        "args": {
+          "source": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\dest.txt",
+          "destination": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\missing.txt"
+        }
+      },
+      "retries": 0,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T23:53:56.344Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T23:53:56.344Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-03T23:53:56.346Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "status": "fail",
+      "attempt": 1,
+      "stderr": "ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\missing.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\dest.txt'",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-03T23:53:56.346Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "status": "in_progress",
+      "stdout": "Attempting rollback."
+    },
+    {
+      "ts": "2026-03-03T23:53:56.347Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "status": "fail",
+      "stderr": "Rollback failed: ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\dest.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\missing.txt'",
+      "error_code": "ROLLBACK_FAILED"
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [
+    {
+      "ts": "2026-03-03T23:53:56.346Z",
+      "action_id": "bcba046a-8fc7-47a1-b7a0-c0a762063db9",
+      "failure_signature": "ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\missing.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-hZ6UhZ\\dest.txt'",
+      "patch": "No alternate patch configured in scaffold runner.",
+      "outcome": "unresolved"
+    }
+  ],
+  "final_result": {
+    "status": "failed",
+    "summary": "Run failed due to action errors."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "appId": "com.systempilot.operatorconsole",
+  "productName": "System Pilot Operator Console",
+  "directories": {
+    "output": "desktop/release"
+  },
+  "files": [
+    "desktop/dist/**/*",
+    "dist/**/*",
+    "config/**/*",
+    "schemas/**/*",
+    "package.json"
+  ],
+  "extraMetadata": {
+    "main": "desktop/dist/main/main.js"
+  },
+  "asar": true,
+  "win": {
+    "signAndEditExecutable": false,
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "SystemPilot-Setup-${version}.${ext}"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "run_id": "bad8004e-0428-414c-89cf-47b30c41bc2e",
+  "goal": "browser open https://example.com",
+  "plan": [
+    {
+      "action_id": "44ff97c6-03cf-439a-9789-fbb64ebe8d2f",
+      "type": "browser.open",
+      "args": {
+        "session_id": "default",
+        "url": "https://example.com"
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Open browser session at target URL.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T20:02:25.571Z",
+      "action_id": "44ff97c6-03cf-439a-9789-fbb64ebe8d2f",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T20:02:25.571Z",
+      "action_id": "44ff97c6-03cf-439a-9789-fbb64ebe8d2f",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-03T20:02:32.852Z",
+      "action_id": "44ff97c6-03cf-439a-9789-fbb64ebe8d2f",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "Opened https://example.com",
+      "stderr": "",
+      "redacted": false
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

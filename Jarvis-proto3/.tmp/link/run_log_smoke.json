@@ -1,0 +1,17 @@
+{
+  "run_id": "d2609b50-1b1c-41e9-bec1-23ad2c59a0cd",
+  "goal": "phase2-link-runlog-smoke",
+  "plan": [],
+  "events": [
+    {
+      "ts": "2026-03-03T16:36:42.686518+00:00",
+      "status": "ok",
+      "action_id": "855b9d27-bde9-47ef-aa73-17390fb11b27"
+    }
+  ],
+  "artifacts": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "run log storage smoke passed"
+  }
+}

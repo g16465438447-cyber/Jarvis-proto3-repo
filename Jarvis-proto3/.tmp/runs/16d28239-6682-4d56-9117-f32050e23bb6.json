@@ -1,0 +1,75 @@
+{
+  "run_id": "16d28239-6682-4d56-9117-f32050e23bb6",
+  "goal": "test plan",
+  "plan": [
+    {
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "type": "fs.move",
+      "args": {
+        "source": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\missing.txt",
+        "destination": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\dest.txt"
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "move",
+      "rollback": {
+        "type": "fs.move",
+        "args": {
+          "source": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\dest.txt",
+          "destination": "C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\missing.txt"
+        }
+      },
+      "retries": 0,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T03:24:44.238Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:24:44.238Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T03:24:44.241Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "status": "fail",
+      "attempt": 1,
+      "stderr": "ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\missing.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\dest.txt'",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-04T03:24:44.241Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "status": "in_progress",
+      "stdout": "Attempting rollback."
+    },
+    {
+      "ts": "2026-03-04T03:24:44.243Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "status": "fail",
+      "stderr": "Rollback failed: ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\dest.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\missing.txt'",
+      "error_code": "ROLLBACK_FAILED"
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [
+    {
+      "ts": "2026-03-04T03:24:44.241Z",
+      "action_id": "2b0dacd8-234b-43dd-bec0-ed234a7d70cc",
+      "failure_signature": "ENOENT: no such file or directory, rename 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\missing.txt' -> 'C:\\Users\\User\\AppData\\Local\\Temp\\pilot-tests-chiVwb\\dest.txt'",
+      "patch": "No alternate patch configured in scaffold runner.",
+      "outcome": "unresolved"
+    }
+  ],
+  "final_result": {
+    "status": "failed",
+    "summary": "Run failed due to action errors."
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "run_id": "85eb1884-2cb4-4d22-8511-b8af4b7a4981",
+  "goal": "test plan",
+  "plan": [
+    {
+      "action_id": "8df12a18-eedd-4c2c-a563-f03c241ea6e0",
+      "type": "fs.list",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "recursive": false
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "List files.",
+      "rollback": null,
+      "retries": 0,
+      "timeout_ms": 1000,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T23:56:37.970Z",
+      "action_id": "8df12a18-eedd-4c2c-a563-f03c241ea6e0",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T23:56:37.970Z",
+      "action_id": "8df12a18-eedd-4c2c-a563-f03c241ea6e0",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

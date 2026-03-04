@@ -1,0 +1,74 @@
+{
+  "run_id": "bb24b11d-0c4a-4832-9ef3-5f7ce2a534ed",
+  "goal": "shell Get-ChildItem -Path C:\\Users\\User\\Downloads -File",
+  "plan": [
+    {
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-ChildItem",
+        "args": [
+          "-Path",
+          "C:\\Users\\User\\Downloads",
+          "-File"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T00:49:41.534Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T00:49:41.535Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-04T00:49:47.432Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "status": "retrying",
+      "attempt": 1,
+      "stderr": "PowerShell exited with code 1: \u001b[31;1mGet-ChildItem: \u001b[31;1mCannot find path 'C:\\Users\\User\\Downloads' because it does not exist.\u001b[0m\r\n",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-04T00:49:47.432Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "status": "in_progress",
+      "attempt": 2
+    },
+    {
+      "ts": "2026-03-04T00:49:53.237Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "status": "fail",
+      "attempt": 2,
+      "stderr": "PowerShell exited with code 1: \u001b[31;1mGet-ChildItem: \u001b[31;1mCannot find path 'C:\\Users\\User\\Downloads' because it does not exist.\u001b[0m\r\n",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [
+    {
+      "ts": "2026-03-04T00:49:53.237Z",
+      "action_id": "72042464-9519-47f5-b1c0-fec65c78ff93",
+      "failure_signature": "PowerShell exited with code 1: \u001b[31;1mGet-ChildItem: \u001b[31;1mCannot find path 'C:\\Users\\User\\Downloads' because it does not exist.\u001b[0m\r\n",
+      "patch": "No alternate patch configured in scaffold runner.",
+      "outcome": "unresolved"
+    }
+  ],
+  "final_result": {
+    "status": "failed",
+    "summary": "Run failed due to action errors."
+  }
+}

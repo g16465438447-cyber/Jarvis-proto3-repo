@@ -1,0 +1,69 @@
+{
+  "run_id": "4a4a7f9b-7e4f-4c85-9731-b34a0e537b82",
+  "goal": "browser open https://openai.com/index/chatgpt/ then shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "b9a003b4-c39a-43d6-9f1f-2b3ef7237c99",
+      "type": "browser.open",
+      "args": {
+        "session_id": "default",
+        "url": "https://openai.com/index/chatgpt/"
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Open browser session at target URL.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    },
+    {
+      "action_id": "f766e961-adab-45a5-af09-74fbd859a207",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-04T03:30:16.557Z",
+      "action_id": "b9a003b4-c39a-43d6-9f1f-2b3ef7237c99",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:30:16.557Z",
+      "action_id": "b9a003b4-c39a-43d6-9f1f-2b3ef7237c99",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    },
+    {
+      "ts": "2026-03-04T03:30:16.557Z",
+      "action_id": "f766e961-adab-45a5-af09-74fbd859a207",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-04T03:30:16.557Z",
+      "action_id": "f766e961-adab-45a5-af09-74fbd859a207",
+      "status": "skipped",
+      "stdout": "Dry run mode: action not executed."
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}

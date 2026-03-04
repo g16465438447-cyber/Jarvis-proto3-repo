@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pilot.plan.schema.v1",
+  "type": "object",
+  "required": [
+    "plan_id",
+    "run_id",
+    "goal",
+    "created_at_utc",
+    "dry_run",
+    "actions"
+  ],
+  "properties": {
+    "plan_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "run_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "goal": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/action"
+      }
+    },
+    "policy_snapshot": {
+      "type": "object",
+      "required": [
+        "allowed_paths",
+        "allowed_apps",
+        "allowed_shell_commands"
+      ],
+      "properties": {
+        "allowed_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_apps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "allowed_shell_commands": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "action": {
+      "type": "object",
+      "required": [
+        "action_id",
+        "type",
+        "args",
+        "risk",
+        "requires_approval",
+        "expected_output",
+        "rollback"
+      ],
+      "properties": {
+        "action_id": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "fs.list",
+            "fs.search",
+            "fs.move",
+            "fs.rename",
+            "process.start",
+            "process.stop",
+            "window.focus",
+            "window.screenshot",
+            "browser.open",
+            "browser.click",
+            "browser.type",
+            "browser.download",
+            "shell.run",
+            "extract.text",
+            "extract.table"
+          ]
+        },
+        "args": {
+          "type": "object"
+        },
+        "risk": {
+          "type": "string",
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "requires_approval": {
+          "type": "boolean"
+        },
+        "expected_output": {
+          "type": "string"
+        },
+        "rollback": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "type",
+            "args"
+          ],
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "args": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 600000,
+          "default": 120000
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3,
+          "default": 1
+        },
+        "on_failure": {
+          "type": "string",
+          "enum": [
+            "halt",
+            "skip",
+            "retry_alternate"
+          ],
+          "default": "halt"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
+

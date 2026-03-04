@@ -1,0 +1,73 @@
+{
+  "run_id": "350e9269-8fe0-4043-b53e-6ab715915f4e",
+  "goal": "shell Get-Date -Format o",
+  "plan": [
+    {
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "type": "shell.run",
+      "args": {
+        "command": "Get-Date",
+        "args": [
+          "-Format",
+          "o"
+        ]
+      },
+      "risk": "medium",
+      "requires_approval": false,
+      "expected_output": "Execute allowlisted PowerShell command.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T20:00:59.193Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T20:00:59.193Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-03T20:01:06.823Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "status": "retrying",
+      "attempt": 1,
+      "stderr": "PowerShell exited with code 1: \u001b[31;1mGet-Date: \u001b[31;1mCannot bind parameter 'Date'. Cannot convert value \"-Format\" to type \"System.DateTime\". Error: \"String '-Format' was not recognized as a valid DateTime.\"\u001b[0m\r\n",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    },
+    {
+      "ts": "2026-03-03T20:01:06.823Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "status": "in_progress",
+      "attempt": 2
+    },
+    {
+      "ts": "2026-03-03T20:01:13.734Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "status": "fail",
+      "attempt": 2,
+      "stderr": "PowerShell exited with code 1: \u001b[31;1mGet-Date: \u001b[31;1mCannot bind parameter 'Date'. Cannot convert value \"-Format\" to type \"System.DateTime\". Error: \"String '-Format' was not recognized as a valid DateTime.\"\u001b[0m\r\n",
+      "error_code": "TOOL_EXECUTION_FAILED"
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [
+    {
+      "ts": "2026-03-03T20:01:13.734Z",
+      "action_id": "9ac97d28-edd9-466c-8a36-4578faafa45b",
+      "failure_signature": "PowerShell exited with code 1: \u001b[31;1mGet-Date: \u001b[31;1mCannot bind parameter 'Date'. Cannot convert value \"-Format\" to type \"System.DateTime\". Error: \"String '-Format' was not recognized as a valid DateTime.\"\u001b[0m\r\n",
+      "patch": "No alternate patch configured in scaffold runner.",
+      "outcome": "unresolved"
+    }
+  ],
+  "final_result": {
+    "status": "failed",
+    "summary": "Run failed due to action errors."
+  }
+}

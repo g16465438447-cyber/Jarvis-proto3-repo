@@ -1,0 +1,46 @@
+{
+  "name": "jarvis-proto3",
+  "version": "1.0.0",
+  "description": "System Pilot local deterministic automation scaffold",
+  "main": "dist/cli/pilot.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "pilot": "tsx src/cli/pilot.ts",
+    "pilot:trigger": "tsx src/cli/pilot-trigger.ts",
+    "link": "python tools/link_handshake.py",
+    "desktop:build:main": "tsc -p desktop/tsconfig.main.json",
+    "desktop:build:renderer": "vite build --config desktop/renderer/vite.config.ts",
+    "desktop:build": "npm run build && npm run desktop:build:main && npm run desktop:build:renderer",
+    "desktop:start": "npm run desktop:build && electron desktop/dist/main/main.js",
+    "desktop:dist": "npm run desktop:build && electron-builder --config electron-builder.json --win nsis",
+    "desktop:dist:dir": "npm run desktop:build && electron-builder --config electron-builder.json --win dir",
+    "desktop:test": "vitest run desktop/tests/**/*.test.ts --maxWorkers=1",
+    "test:unit": "vitest run --maxWorkers=1",
+    "test": "npm run typecheck && npm run test:unit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ajv": "^8.18.0",
+    "ajv-formats": "^3.0.1",
+    "dotenv": "^17.3.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@types/node": "^25.3.3",
+    "@vitejs/plugin-react": "^5.1.0",
+    "electron": "^37.7.1",
+    "electron-builder": "^26.0.12",
+    "playwright": "^1.58.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.7",
+    "vitest": "^4.0.18"
+  }
+}

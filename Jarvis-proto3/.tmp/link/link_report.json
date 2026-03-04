@@ -1,0 +1,90 @@
+{
+  "started_at_utc": "2026-03-03T16:36:35.290340+00:00",
+  "finished_at_utc": "2026-03-03T16:36:42.692893+00:00",
+  "overall_status": "pass",
+  "checks": [
+    {
+      "name": "env",
+      "status": "warn",
+      "summary": ".env not found.",
+      "details": {
+        "env_path": "D:\\Jarvis-proto3\\.env",
+        "required_keys": [],
+        "recommended_keys": [
+          "LLM_PROVIDER",
+          "OPENAI_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "GOOGLE_API_KEY"
+        ],
+        "missing_required": [],
+        "present_recommended": [],
+        "env_example_exists": true,
+        "remediation": "Copy .env.example to .env and fill values."
+      },
+      "artifacts": [],
+      "duration_ms": 0
+    },
+    {
+      "name": "filesystem",
+      "status": "pass",
+      "summary": "Filesystem create/move/rollback succeeded.",
+      "details": {
+        "source_path": "D:\\Jarvis-proto3\\.tmp\\link\\fs_smoke_source.txt",
+        "dest_path": "D:\\Jarvis-proto3\\.tmp\\link\\fs_smoke_dest.txt",
+        "rollback_performed": true
+      },
+      "artifacts": [
+        "D:\\Jarvis-proto3\\.tmp\\link\\fs_smoke_source.txt"
+      ],
+      "duration_ms": 1
+    },
+    {
+      "name": "shell",
+      "status": "pass",
+      "summary": "Allowlisted PowerShell probe succeeded.",
+      "details": {
+        "probe": "Get-Date -Format o",
+        "stdout": "2026-03-03T08:36:40.5730024-08:00"
+      },
+      "artifacts": [],
+      "duration_ms": 5349
+    },
+    {
+      "name": "playwright",
+      "status": "pass",
+      "summary": "Playwright open/click/download smoke succeeded.",
+      "details": {
+        "download_path": "D:\\Jarvis-proto3\\.tmp\\link\\playwright_smoke_download.txt",
+        "stdout": "D:\\Jarvis-proto3\\.tmp\\link\\playwright_smoke_download.txt"
+      },
+      "artifacts": [
+        "D:\\Jarvis-proto3\\.tmp\\link\\playwright_smoke_download.txt"
+      ],
+      "duration_ms": 2045
+    },
+    {
+      "name": "runlog",
+      "status": "pass",
+      "summary": "Run log write/read succeeded.",
+      "details": {
+        "path": "D:\\Jarvis-proto3\\.tmp\\link\\run_log_smoke.json",
+        "required_keys_checked": [
+          "run_id",
+          "goal",
+          "events",
+          "final_result"
+        ]
+      },
+      "artifacts": [
+        "D:\\Jarvis-proto3\\.tmp\\link\\run_log_smoke.json"
+      ],
+      "duration_ms": 6
+    }
+  ],
+  "artifacts": [
+    "D:\\Jarvis-proto3\\.tmp\\link\\fs_smoke_source.txt",
+    "D:\\Jarvis-proto3\\.tmp\\link\\playwright_smoke_download.txt",
+    "D:\\Jarvis-proto3\\.tmp\\link\\run_log_smoke.json"
+  ],
+  "config_path": "D:\\Jarvis-proto3\\config\\link_profile.json"
+}

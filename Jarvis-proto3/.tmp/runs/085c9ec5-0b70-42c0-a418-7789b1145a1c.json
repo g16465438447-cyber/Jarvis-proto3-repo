@@ -1,0 +1,49 @@
+{
+  "run_id": "085c9ec5-0b70-42c0-a418-7789b1145a1c",
+  "goal": "list .tmp",
+  "plan": [
+    {
+      "action_id": "e89d573f-6861-4785-8351-361ad33a7000",
+      "type": "fs.list",
+      "args": {
+        "path": "D:\\Jarvis-proto3\\.tmp",
+        "recursive": false
+      },
+      "risk": "low",
+      "requires_approval": false,
+      "expected_output": "List files in target path.",
+      "rollback": null,
+      "timeout_ms": 120000,
+      "retries": 1,
+      "on_failure": "halt"
+    }
+  ],
+  "events": [
+    {
+      "ts": "2026-03-03T20:00:35.699Z",
+      "action_id": "e89d573f-6861-4785-8351-361ad33a7000",
+      "status": "planned"
+    },
+    {
+      "ts": "2026-03-03T20:00:35.699Z",
+      "action_id": "e89d573f-6861-4785-8351-361ad33a7000",
+      "status": "in_progress",
+      "attempt": 1
+    },
+    {
+      "ts": "2026-03-03T20:00:35.708Z",
+      "action_id": "e89d573f-6861-4785-8351-361ad33a7000",
+      "status": "ok",
+      "attempt": 1,
+      "stdout": "D:\\Jarvis-proto3\\.tmp\\link\nD:\\Jarvis-proto3\\.tmp\\README.md\nD:\\Jarvis-proto3\\.tmp\\runs",
+      "stderr": "",
+      "redacted": false
+    }
+  ],
+  "artifacts": [],
+  "repair_history": [],
+  "final_result": {
+    "status": "ok",
+    "summary": "Run completed successfully."
+  }
+}
