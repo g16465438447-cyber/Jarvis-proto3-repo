@@ -1,0 +1,9 @@
+remote: warning: File Jarvis-proto3/desktop/release/SystemPilot-Setup-1.0.0.exe is 90.36 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB        
+remote: error: Trace: 276c166cad09b211b08f5c3613792b7b202024ade4125b6c926665971980e441        
+remote: error: See https://gh.io/lfs for more information.        
+remote: error: File Jarvis-proto3/desktop/release/win-unpacked/System Pilot Operator Console.exe is 195.05 MB; this exceeds GitHub's file size limit of 100.00 MB        
+remote: error: File Jarvis-proto3/node_modules/electron/dist/electron.exe is 195.05 MB; this exceeds GitHub's file size limit of 100.00 MB        
+remote: error: GH001: Large files detected. You may want to try Git Large File Storage - https://git-lfs.github.com.        
+To https://github.com/JingByTheDoor/Jarvis-proto3-repo.git
+ ! [remote rejected] main -> main (pre-receive hook declined)
+error: failed to push some refs to 'https://github.com/JingByTheDoor/Jarvis-proto3-repo.git'

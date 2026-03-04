@@ -1,0 +1,2 @@
+D:\Jarvis-proto3-repo\Jarvis-proto3\desktop\release\win-unpacked\System Pilot Operator Console.exe: 204521984
+D:\Jarvis-proto3-repo\Jarvis-proto3\node_modules\electron\dist\electron.exe: 204521984

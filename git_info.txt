@@ -1,0 +1,15 @@
+* main 9582e46 [origin/main: gone] Retried using git lfs
+origin	https://github.com/JingByTheDoor/Jarvis-proto3-repo.git (fetch)
+origin	https://github.com/JingByTheDoor/Jarvis-proto3-repo.git (push)
+On branch main
+Your branch is based on 'origin/main', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+9582e46 Retried using git lfs
+a819a1c Used LFS to transfer large files
+38d70a6 Project Uploaded Successfully
