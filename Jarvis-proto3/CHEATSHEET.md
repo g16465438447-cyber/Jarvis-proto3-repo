@@ -44,47 +44,6 @@ If needed, verify desktop tests:
 npx vitest run desktop/tests/streamParser.test.ts desktop/tests/uiLogic.test.ts --maxWorkers=1
 ```
 
-
-## If `App.tsx` is missing (common Git-first-time issue)
-
-Symptom:
-```text
-Could not resolve "./App" from "desktop/renderer/src/main.tsx"
-```
-
-Check:
-```powershell
-Test-Path .\desktop\renderer\src\App.tsx
-```
-
-If `False`, try restoring from your remote branch first:
-```powershell
-git fetch --all --prune
-git checkout origin/work -- .\desktop\renderer\src\App.tsx
-```
-
-If `origin/work` does not exist, list branches and replace with yours (for example `origin/main`):
-```powershell
-git branch -a
-git checkout origin/main -- .\desktop\renderer\src\App.tsx
-```
-
-Then run:
-```powershell
-npm run desktop:start
-```
-
-If you still cannot restore from git history, create a temporary file so the app can boot:
-```powershell
-@'
-export default function App() {
-  return <div style={{ padding: 20, color: "#ddd" }}>System Pilot UI boot placeholder</div>;
-}
-'@ | Set-Content -Path .\desktop\renderer\src\App.tsx -Encoding UTF8
-
-npm run desktop:start
-```
-
 ## Command Grammar
 System Pilot router supports these templates:
 
